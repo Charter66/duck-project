@@ -19,7 +19,7 @@ const getDuckById=async(req, res, next) =>{
         next(error)
     }
 }
-const createDuck = async (req, res) => {
+const createDuck = async (req, res, next) => {
     const {name , owner, quote, imageUrl} = req.body
     try {
   
