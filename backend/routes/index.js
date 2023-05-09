@@ -4,7 +4,7 @@ const {getAllDucks, getDuckById, updateDuck, deleteDuck, createDuck} = require('
 const {checkId , checkAddDuck, checkUpdateDuck} = require('../middleware/validateRequest')
 
 router.route('/ducks').get(getAllDucks)
-router.route('/:id').all(checkId).put(checkUpdateDuck,updateDuck).delete(deleteDuck).get(getDuckById)
+router.route('duck/:id').all(checkId).put(checkUpdateDuck,updateDuck).delete(deleteDuck).get(getDuckById)
 router.route('/create').post(checkAddDuck,createDuck)
 
 
