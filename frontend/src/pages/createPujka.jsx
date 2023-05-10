@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState  } from 'react';
 import axios from 'axios';
 
 const DuckForm = () => {
+
   const [owner, setOwner] = useState('');
   const [name, setName] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -31,6 +32,8 @@ const DuckForm = () => {
       // Handle errors if the request fails
       console.error(error);
     }
+
+
   };
 
   return (

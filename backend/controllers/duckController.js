@@ -1,4 +1,4 @@
-const Duck = require('../models')
+const Duck = require('../models/duckSchema')
 
 const ErrorStatus = require('../utils/errorStatus')
 
