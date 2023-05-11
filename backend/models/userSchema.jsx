@@ -29,5 +29,5 @@ const userSchema = new mongoose.Schema({
     },
 })
 
-const Duck = mongoose.model('User', userSchema);
-module.exports = Duck;
+const User = mongoose.model('User', userSchema);
+module.exports = User;
