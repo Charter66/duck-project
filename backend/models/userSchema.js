@@ -1,5 +1,4 @@
 const mongoose = require('../db');
-const urlPattern = new RegExp(`^(http(s)?://)?([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?$`);
 
 const userSchema = new mongoose.Schema({
     firsname: {

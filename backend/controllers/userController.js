@@ -1,4 +1,5 @@
 const User = require('../models/userSchema')
+
 const getOneUser = async(req,res,next) => {
     try {
         const {id} = req.params;
