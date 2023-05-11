@@ -1,4 +1,5 @@
 const User = require('../models/userSchema')
+const ErrorStatus = require('../utils/errorStatus')
 
 const getOneUser = async(req,res,next) => {
     try {
