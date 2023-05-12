@@ -1,4 +1,5 @@
 import React, { useState  } from 'react';
+import {useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 const Register= () => {
@@ -7,6 +8,7 @@ const Register= () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +25,7 @@ const Register= () => {
 
       // Handle the response if needed
       console.log(response.data);
-
+      // navigate('/login')
   
     } catch (error) {
       // Handle errors if the request fails

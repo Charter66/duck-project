@@ -9,7 +9,7 @@
     "build": "npm install"
   },
   "keywords": [],
-  "author": "Lilian",
+  "author": "Lazar",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
