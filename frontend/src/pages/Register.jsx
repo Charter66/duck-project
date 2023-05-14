@@ -16,7 +16,7 @@ const Register= () => {
     try {
       
       // Send a POST request to the back-end API to save the user details
-      const response = await axios.post('https://duck-project1.onrender.com/users', {
+      const response = await axios.post('https://duck-project.onrender.com/users/register', {
         firstName,
         lastName,
         email,
