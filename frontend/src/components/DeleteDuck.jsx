@@ -5,7 +5,7 @@ const DeleteButton = ({ duckId }) => {
   const handleDelete = async () => {
     console.log(duckId)
     try {
-      await axios.delete(`https://duck-project1.onrender.com/duck/${duckId}`);
+      await axios.delete(`https://duck-project1.onrender.com/ducks/${duckId}`);
       console.log(duckId);
     } catch (error) {
       console.error(error);

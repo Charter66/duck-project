@@ -4,8 +4,7 @@ const {getAllDucks, getDuckById, updateDuck, deleteDuck, createDuck} = require('
 const {checkId , checkAddDuck, checkUpdateDuck} = require('../middleware/validateRequest')
 
 duckRouter.route('/').get(getAllDucks)
-duckRouter.route('/:id').all(checkId).put(checkUpdateDuck,updateDuck).get(getDuckById)
+duckRouter.route('/:id').all(checkId).put(checkUpdateDuck,updateDuck).get(getDuckById).delete(deleteDuck)
 duckRouter.route('/create').post(checkAddDuck,createDuck)
-duckRouter.route('/duck/:id').delete(deleteDuck)
 
 module.exports = duckRouter;
