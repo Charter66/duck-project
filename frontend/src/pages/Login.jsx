@@ -23,6 +23,8 @@ const Login = () => {
         console.error(error)
     }
 
+
+ navigate('/home')
  
 }
   return (
