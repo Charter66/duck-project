@@ -19,7 +19,7 @@ const getOneUser = async (req, res, next) => {
       const token = jwt.sign({ _id: findUser._id }, process.env.JWT_SECRET);
   
       // Set the token as a cookie in the response
-      res.cookie('token', token, { httpOnly: true }).sendStatus(201);
+      res.cookie('token', token, { httpOnly: true }).sendStatus(200);
     } catch (error) {
       next(error);
     }
