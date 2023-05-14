@@ -1,48 +1,60 @@
-import {useState} from 'react'
-import {useNavigate} from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const Login =()=>{
+const Login = () => {
+  const navigate = useNavigate();
+  const [{email, password}, setForm] = useState({
+    email:'',
+    password: '',
+  })
 
-        const [email, setEmail] = useState({email: ''})
-        const [password, setPassword] = useState({email: ''})
+  const handleChange = (e) => {
+    const {name , value} = e.target;
+    setForm((prev)=>({...prev, [name]: value}))
+  }
 
-        const handleChange = (e) =>{
-            setEmail(e.target.value)
-            setPassword(e.target.value)
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the form from refreshing the page
+    try{
+        const {status} = await axios('https://localhost:8000/users/login', {email, password});
+        console.log(status)
+    }catch(error){
+        console.error(error)
+    }
 
-        const handleSubmit = () =>{ 
-            
-        }
-      return (
-        <>
-        <form className="my-form" onSubmit={handleSubmit}> {/* Add the 'my-form' class */}
-            <div>
-            <label >Email:</label>
-            <input 
-            
-             type="email"
-             id="email"
-             name="email" 
-             onChange={handleChange} 
-             className="my-name"
-
-             />
-             
-            </div>
-            <div> 
-            <label>Password:</label>
-
-            <input 
-            type="password"
-             id="password"
-             name="password" 
-             onChange={handleChange} />
-            </div>
-            <button type="submit" className="my-button">Submit</button> {/* Add the 'my-button' class */}
-    </form>
-        </>
-    )
+ 
 }
+  return (
+    <>
+      <form className="my-form" onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            className="my-name"
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" className="my-button">
+          Submit
+        </button>
+      </form>
+    </>
+  );
+};
 
 export default Login;

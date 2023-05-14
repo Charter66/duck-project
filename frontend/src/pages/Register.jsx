@@ -31,6 +31,7 @@ const Register= () => {
       // Handle errors if the request fails
       console.error(error);
     }
+    navigate('/login');
 
   };
 

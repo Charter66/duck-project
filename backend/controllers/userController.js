@@ -19,12 +19,11 @@ const getOneUser = async (req, res, next) => {
       const token = jwt.sign({ _id: findUser._id }, process.env.JWT_SECRET);
   
       // Set the token as a cookie in the response
-      res.cookie('token', token, { httpOnly: true }).status(200).send();
+      res.cookie('token', token, { httpOnly: true }).sendStatus(201);
     } catch (error) {
       next(error);
     }
   };
-};
 const createUser = async(req,res,next) => {
     try {
         const {firstName, lastName, email, password} = req.body;    
@@ -41,7 +40,7 @@ const createUser = async(req,res,next) => {
 
         const token = jwt.sign({_id}, process.env.JWT_SECRET)
 
-        res.status(201).json(token);
+        res.cookie('token', token, {httpOnly: true}).sendStatus(201);
         
     } catch (error) {
         next(error)
