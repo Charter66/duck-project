@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the form from refreshing the page
     try{
-        const {status} = await axios('https://duck-project.onrender.com/users/login', {email, password});
+        const {status} = await axios.post('https://duck-project.onrender.com/users/login', {email, password});
         console.log(status)
     }catch(error){
         console.error(error)
